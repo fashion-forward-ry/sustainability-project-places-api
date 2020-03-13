@@ -1,0 +1,16 @@
+{
+  "name": "sustainable-fashion-map",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "csv": "^5.3.1",
+    "csv-parse": "^4.8.5",
+    "csv-writer": "^1.6.0",
+    "fast-csv": "^4.0.2",
+    "google-spreadsheet": "^3.0.9",
+    "googleapis": "^48.0.0",
+    "readline": "^1.3.0"
+  }
+}
