@@ -3,4 +3,7 @@ node_modules/
 token.json
 credentials.json
 client_id.json
-
+pom.xml
+target/
+.lein-repl-history
+.eastwood
