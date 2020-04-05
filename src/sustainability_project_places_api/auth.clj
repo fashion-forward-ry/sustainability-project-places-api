@@ -1,4 +1,4 @@
-(ns auth
+(ns sustainability-project-places-api.auth
   (:require [clj-http.client :as http]
             [cheshire.core :as json]))
 
@@ -13,12 +13,3 @@
                                                :refresh_token refresh-token
                                                :grant_type "refresh_token"}})]
     (json/parse-string (:body response) true)))
-
-;; Function for getting spreadsheet content.
-;; Example of calling the function:
-;; (auth/get-spreadsheet-content "api-url" "my-access-token" "spreadsheet-id" "foo!A1:Z4")
-;; Returns a map with majorDimension, values and range as keys
-(defn get-spreadsheet-content [base-url access-token spreadsheet-id range]
-  (let [resp (http/get (str base-url "/v4/spreadsheets/" spreadsheet-id "/values/" range)
-                       {:oauth-token access-token})]
-    (json/parse-string (:body resp) true)))
