@@ -10,13 +10,6 @@
   (let [resp (http/get (str base-url "/" spreadsheet-id "/" tab-name ".json"))]
     (json/parse-string (:body resp) true)))
 
-;; Function for getting data for a place from Google places API.
-;; Example of calling the function:
-;; (auth/get-place-detail "<key-to-api>" "<place-id>" "https://maps.googleapis.com/maps/api/place")
-(defn get-place-detail [key place-id base-url]
-  (let [resp (http/get (str base-url "/details/json?key=" key "&place_id=" place-id))]
-    (json/parse-string (:body resp) true)))
-
 ;; Function for getting all brands listed in firebase real-time database
 (defn get-brands [project-id]
   (get-data-from-firebase (str "https://" project-id ".firebaseio.com/") "1UFqUg8WKS111fSrUgc9ghhrABEWG2SrTOxKvdDd8ab4" "brands"))
